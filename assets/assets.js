@@ -23,6 +23,8 @@ import qrcode from "./qrcode.png";
 import three_dots from "./three_dots.svg";
 import new_icon from "./new_icon.svg";
 import new_moon_face from "./new_moon_face.svg";
+import peach from "./peach.svg";
+import watermelon from "./watermelon.svg";
 
 export const assets = {
   arrow_icon,
@@ -50,4 +52,6 @@ export const assets = {
   three_dots,
   new_icon,
   new_moon_face,
+  peach,
+  watermelon,
 };

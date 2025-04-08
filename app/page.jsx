@@ -4,6 +4,7 @@ import Image from "next/image";
 import { assets } from "@/assets/assets";
 import Sidebar from "@/components/Sidebar";
 import PromptBox from "@/components/PromptBox";
+import Message from "@/components/Message";
 
 export default function Home() {
   const [expand, setExpand] = useState(false);
@@ -24,7 +25,7 @@ export default function Home() {
             />
             <Image className="opacity-70" src={assets.chat_icon} alt="" />
           </div>
-          {messages.length == 0 ? (
+          {messages.length === 0 ? (
             <>
               <div className="flex items-center gap-3">
                 <p className="text-2xl">🌚</p>
@@ -33,7 +34,9 @@ export default function Home() {
               <p className="text-sm mt-2">how can i help u today?</p>
             </>
           ) : (
-            <div></div>
+            <div>
+              <Message role="user" content="hello"></Message>
+            </div>
           )}
           <PromptBox
             isLoading={isLoading}

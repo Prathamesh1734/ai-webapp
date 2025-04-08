@@ -2,7 +2,7 @@ import { Webhook } from "svix";
 import connectDB from "@/config/db";
 import User from "@/models/User";
 import { headers } from "next/headers";
-import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
 export async function POST(req) {
   const wh = new Webhook(process.env.SIGNING_SECRET);
@@ -20,8 +20,8 @@ export async function POST(req) {
 
   //prepare user data to save it in db
   const userData = {
-    _id: data._id,
-    email: data.email_addresses[0].email_address,
+    _id: data.id,
+    email: data.email_addresses.email_address,
     name: `${data.first_name} ${data.last_name}`,
     image: data.image_url,
   };
@@ -45,5 +45,5 @@ export async function POST(req) {
       break;
   }
 
-  return NextResponse.json({ message: "event received" });
+  return NextRequest.json({ message: "event received" });
 }

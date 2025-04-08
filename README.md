@@ -36,3 +36,14 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # ai-webapp
 ai chatbot with deepseeek api
+
+# backend packages
+axios - to make api call
+mongoose - to connect to mongodb db
+openai - to make api call and get response from ai
+svix - to manage clerk webhook and store userdata in db
+
+# frontend packages
+prismjs - to highlight syntax
+react-hot-toast : display toast noti
+react-markdown - structure the response that we are getting from ai

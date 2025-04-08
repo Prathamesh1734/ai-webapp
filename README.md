@@ -53,6 +53,6 @@ svix - to manage clerk webhook and store userdata in db
 
 prismjs - to highlight syntax
 
-react-hot-toast : display toast noti
+react-hot-toast - display toast noti
 
 react-markdown - structure the response that we are getting from ai

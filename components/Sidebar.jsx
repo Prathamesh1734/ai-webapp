@@ -81,7 +81,7 @@ const Sidebar = ({ expand, setExpand }) => {
         </div>
       </div>
       <div>
-        <div
+        {/* <div
           className={`flex items-center cursor-pointer group relative ${
             expand
               ? "gap-1 text-white/80 text-sm p-2.5 border border-primary rounded-lg hover:bg-white/10 cursor-pointer"
@@ -113,7 +113,7 @@ const Sidebar = ({ expand, setExpand }) => {
               <span>get app</span> <Image src={assets.new_icon} alt=""></Image>
             </>
           )}
-        </div>
+        </div> */}
         <div
           onClick={user ? null : openSignIn}
           className={`flex items-center ${

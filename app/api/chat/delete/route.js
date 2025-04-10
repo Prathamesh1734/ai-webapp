@@ -3,7 +3,7 @@ import Chat from "@/models/Chat";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-export default async function POST(req) {
+export async function POST(req) {
   try {
     const { userId } = getAuth(req);
     const { chatId } = await req.json();

@@ -1,8 +1,20 @@
 import { assets } from "@/assets/assets";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import Markdown from "react-markdown";
+import Prism from "prismjs";
+import toast from "react-hot-toast";
 
 const Message = ({ role, content }) => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [content]);
+
+  const copyMessage = () => {
+    navigator.clipboard.writeText(content);
+    toast.success("message copied to clipboard");
+  };
+
   return (
     <div className="flex flex-col items-center w-full max-w-3xl text-sm">
       <div
@@ -24,6 +36,7 @@ const Message = ({ role, content }) => {
               {role === "user" ? (
                 <>
                   <Image
+                    onClick={copyMessage}
                     className="w-4 cursor-pointer"
                     src={assets.copy_icon}
                     alt=""
@@ -37,6 +50,7 @@ const Message = ({ role, content }) => {
               ) : (
                 <>
                   <Image
+                    onClick={copyMessage}
                     className="w-4.5 cursor-pointer"
                     src={assets.copy_icon}
                     alt=""
@@ -69,7 +83,9 @@ const Message = ({ role, content }) => {
                 src={assets.peach}
                 alt=""
               ></Image>
-              <div className="space-y-4 w-full overflow-scroll">{content}</div>
+              <div className="space-y-4 w-full overflow-scroll">
+                <Markdown>{content}</Markdown>
+              </div>
             </>
           )}
         </div>
